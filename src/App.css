@@ -231,3 +231,88 @@ input:focus {
 	padding: 10px;
 	border-radius: 3px;
 }
+
+.form-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+}
+
+.form-section h3 {
+	text-align: right;
+	margin-right: 10%;
+}
+
+.name-url-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 10%;
+	padding: 10px;
+}
+
+.radio-btns-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 10px;
+}
+
+.radio-btns-container input {
+	width: 30px;
+	height: 30px;
+}
+
+.radio-btns-container h5 {
+	margin-top: 2%;
+	margin-left: 3%;
+	margin-right: 3%;
+}
+
+.prep-cook-serve-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 10px
+}
+
+.prep-cook-serve-container input {
+	margin: 2px;
+}
+
+.orange-btn {
+	background-color: orange;
+	padding: 10px;
+}
+
+.input-container {
+	display: flex;
+	flex-direction: row;
+	height: 100px
+}
+
+.ing-quant-container {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	justify-content: space-around;
+	margin-right: 20%;
+	margin-bottom: 10px;
+}
+
+.lower-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.lower-container button {
+	width: 20;
+	border-radius: 5%;
+}
+
+.lower-container textarea {
+	margin: 15px
+}

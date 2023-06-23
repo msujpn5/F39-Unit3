@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<HomeScreen />} />
-        <Route path="newRecipe" element={<NewRecipeScreen />} />
+        <Route path="newRecipeScreen" element={<NewRecipeScreen />} />
         <Route path="recipe/:id" element={<DetailScreen />} />
       </Routes>
       <Footer />
