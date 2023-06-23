@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import AdBanner from './AdBanner'
 import axios from "axios";
+import RecipeCard from "../recipeCardComponent/RecipeCard";
 import { BiSearchAlt2 } from "react-icons/bi";
-import RecipeCard from '../recipeCardComponent/RecipeCard';
 
 const HomeScreen = () => {  
 
@@ -10,7 +10,7 @@ const HomeScreen = () => {
   const [search, setSearch] = useState("")
   
   const getRecipes = () => {
-    return axios
+    axios
     .get('https://recipes.devmountain.com/recipes')
     .then((res) => {
       setRecipes(res.data)
@@ -18,15 +18,15 @@ const HomeScreen = () => {
     })
     .catch((err) => console.log(err))
   }
-  
+
   const recipeDisplay = recipes
     .filter((recipe, index) => {
-      let title = recipe.recipe_name.toLowerCase()
-      let searchParams = search.toLowerCase()
-      return title.includes(searchParams)
+        let title = recipe.recipe_name.toLowerCase()
+        let searchParams = search.toLowerCase()
+        return title.includes(searchParams)
     })
     .map((recipe, index) => {
-      return <RecipeCard recipe={recipe}/>
+        return <RecipeCard recipe={recipe}/>
     })
 
   useEffect(() => {
@@ -36,10 +36,15 @@ const HomeScreen = () => {
   return (
     <div>
       <AdBanner />
-      <div className="search-bar">
+      <section className="recipes-and-search">
+        <div className="search-bar">
         <BiSearchAlt2 size="2em" color="#DA7635" />
         <input type="text" placeholder='Search for a Recipe' value={search} onChange={(event) => setSearch(event.target.value)}/>
-      </div>
+    </div>
+    <div className="recipes-container">
+        {recipeDisplay ? recipeDisplay : <h2>No recipes</h2>}
+    </div>
+    </section>
     </div>
   )
 }
